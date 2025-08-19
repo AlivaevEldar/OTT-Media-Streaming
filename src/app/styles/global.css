@@ -1,16 +1,18 @@
 html {
-  scroll-behavior: smooth;
+  @apply scroll-smooth
+}
+
+html.is-lock {
+  @apply overflow-hidden
 }
 
 body {
-  font-family: var(--font-manrope);
-  background-color: var(--color-black-08);
-  position: relative;
+  @apply font-manrope bg-black-08
 }
 
 a,
 button {
-  cursor: pointer;
+  @apply cursor-pointer
 }
 
 p {
