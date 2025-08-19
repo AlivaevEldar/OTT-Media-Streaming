@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
