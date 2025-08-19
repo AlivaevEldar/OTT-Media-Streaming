@@ -1,0 +1,42 @@
+/*после 1920*/
+@media (min-width: 120.058125rem) {
+  .custom-container {
+    width: 100%;
+    max-width: calc(100rem + 10rem * 2);
+    padding-left: 10rem;
+    padding-right: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .custom-container-pr-0 {
+    padding-right: 0;
+  }
+}
+/*до 1920*/
+@media (max-width: 120rem) {
+  .custom-container {
+    width: 100%;
+    max-width: calc(100rem + (-10rem + 16.67vw) * 2);
+    padding-left: clamp(5rem, calc(-10rem + 16.67vw), 10rem);
+    padding-right: clamp(5rem, calc(-10rem + 16.67vw), 10rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .custom-container-pr-0 {
+    padding-right: 0;
+  }
+}
+/*до 1440*/
+@media (max-width: 90rem) {
+  .custom-container {
+    width: 100%;
+    max-width: calc(100rem + (-0.57125rem + 6.19vw) * 2);
+    padding-left: clamp(0.9375rem, calc(-0.57125rem + 6.19vw), 5rem);
+    padding-right: clamp(0.9375rem, calc(-0.57125rem + 6.19vw), 5rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .custom-container-pr-0 {
+    padding-right: 0;
+  }
+}

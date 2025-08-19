@@ -1,0 +1,18 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-manrope);
+  background-color: var(--color-black-08);
+  position: relative;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+p {
+  @apply text-sm font-normal text-grey-60 laptop:text-base desktop:text-lg
+}
