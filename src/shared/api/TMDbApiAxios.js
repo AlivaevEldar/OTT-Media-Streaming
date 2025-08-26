@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TMBbApi = axios.create({
+const TMDbApi = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
   headers: {
     Authorization: `Bearer ${import.meta.env.VITE_ASSECC_KEY}`,
@@ -8,4 +8,4 @@ const TMBbApi = axios.create({
   },
 });
 
-export default TMBbApi;
+export default TMDbApi;

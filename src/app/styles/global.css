@@ -1,20 +1,25 @@
 html {
-  @apply scroll-smooth
+  @apply scroll-smooth;
 }
 
 html.is-lock {
-  @apply overflow-hidden
+  @apply overflow-hidden;
+}
+
+* {
+  @apply leading-normal;
 }
 
 body {
-  @apply font-manrope bg-black-08
+  @apply font-manrope bg-black-08;
 }
 
 a,
 button {
-  @apply cursor-pointer
+  @apply cursor-pointer;
 }
 
-p {
-  @apply text-sm font-normal text-grey-60 laptop:text-base desktop:text-lg
+p,
+.p {
+  @apply text-sm font-normal text-grey-60 laptop:text-base desktop:text-lg;
 }

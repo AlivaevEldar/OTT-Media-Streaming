@@ -1,0 +1,12 @@
+.animationHeaderScroolBg {
+  animation-name: animationHeaderScroolBg;
+  animation-fill-mode: both;
+  animation-timeline: scroll();
+  animation-range: 3rem 20rem;
+}
+
+@keyframes animationHeaderScroolBg {
+  100% {
+    background-color: var(--color-black-06)
+  }
+}
