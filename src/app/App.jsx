@@ -3,9 +3,7 @@ import Home from "@pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "@widget/Footer";
 import Promo from "@widget/Promo";
-import FAQ from "@widget/FAQ"
-import SubscriptionPlan from "@widget/SubscriptionPlan";
-
+import Support from "@pages/Support";
 
 function App() {
   return (
@@ -14,6 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/support" element={<Support />} />
         </Routes>
         <Promo />
         <Footer />

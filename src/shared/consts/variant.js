@@ -13,6 +13,7 @@ export const iconWrapperVariant = {
 
 export const posterVariant = {
   promo:
-    "w-34 h-39.5 bg-cover bg-center bg-no-repeat laptop:w-31 laptop:h-18.5 desktop:w-41 desktop:h-21",
-  heroHome: "w-33.5 h-36 rounded-xl bg-cover bg-center bg-no-repeat laptop:w-38 laptop:h-50 desktop:w-49"
+    "w-34 h-39.5 laptop:w-31 laptop:h-18.5 desktop:w-41 desktop:h-21",
+  heroHome: "w-33.5 h-36 rounded-xl laptop:w-38 laptop:h-50 desktop:w-49",
+  support: "w-24.5 h-30.5 rounded-xl desktop:w-33.5 desktop:h-42"
 };

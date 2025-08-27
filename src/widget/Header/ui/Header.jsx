@@ -74,7 +74,7 @@ function Header() {
                         ? "laptop:font-medium laptop:text-absolute-white laptop:px-4 laptop:py-3 laptop:bg-black-10 laptop:rounded-lg desktop:py-3.5 desktop:px-6"
                         : "laptop:font-normal laptop:text-grey-75"
                     }`}
-                    to="/"
+                    to={item.path}
                   >
                     {item.label}
                   </Link>
