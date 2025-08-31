@@ -1,17 +1,14 @@
 import logo from "./assets/logo.svg";
-import XWhite from "@shared/assets/x-white.svg";
 import IconWrapper from "@shared/ui/kit/IconWrapper";
 import { iconWrapperVariant } from "@shared/consts/variant";
-import SearchBar from "@features/SearchBar";
 import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./style.module.css";
+import MobileMenu from "./MobileMenu";
+import Nav from "./Nav";
+import SearchBar from "@features/SearchBar";
 
 function Header() {
-  const [isActiveNavItem, setIsActiveNavItem] = useState(
-    useLocation().pathname
-  );
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -29,7 +26,7 @@ function Header() {
       >
         <div
           className={`
-             grid grid-cols-[auto_auto] justify-between items-center laptop:grid-cols-[1fr_auto_1fr]
+             flex justify-between items-center laptop:grid laptop:grid-cols-[1fr_auto_1fr]
              pt-10 pb-3.5 laptop:py-4.5 desktop:py-5.5
           `}
         >
@@ -42,47 +39,7 @@ function Header() {
               height={35}
             />
           </Link>
-          <nav
-            className={`
-            hidden laptop:flex laptop:items-center 
-            laptop:w-106 laptop:h-15 laptop:px-7.5 desktop:w-146 desktop:h-19
-            laptop:border-3 laptop:border-black-12 laptop:bg-black-06 laptop:rounded-[0.625rem] desktop:border-3 desktop:rounded-xl
-            ${
-              isActiveNavItem === "/Subscriptions" &&
-              "laptop:pr-2 laptop:pl-7.5 desktop:pl-10 desktop:pr-2.5"
-            } 
-            ${
-              isActiveNavItem === "/" &&
-              "laptop:pl-2 laptop:pr-7.5 desktop:pr-10 desktop:pl-2.5"
-            } 
-          `}
-          >
-            <ul className="laptop:flex laptop:justify-between laptop:w-full">
-              {[
-                { label: "Home", path: "/" },
-                { label: "Movies & Shows", path: "/Movies&Shows" },
-                { label: "Support", path: "/Support" },
-                { label: "Subscriptions", path: "/Subscriptions" },
-              ].map((item) => (
-                <li
-                  onClick={() => setIsActiveNavItem(item.path)}
-                  key={item.label}
-                >
-                  <Link
-                    className={`laptop:text-sm desktop:text-lg ${
-                      item.path === isActiveNavItem
-                        ? "laptop:font-medium laptop:text-absolute-white laptop:px-4 laptop:py-3 laptop:bg-black-10 laptop:rounded-lg desktop:py-3.5 desktop:px-6"
-                        : "laptop:font-normal laptop:text-grey-75"
-                    }`}
-                    to={item.path}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <SearchBar type="laptop" />
+          <Nav />
           <button className="" onClick={() => setIsOpen(true)}>
             <IconWrapper type={iconWrapperVariant.burger}>
               <div
@@ -99,30 +56,8 @@ function Header() {
           </button>
         </div>
       </header>
-      {createPortal(
-        <div
-          className={`
-          fixed
-          flex laptop:hidden
-          w-screen h-screen py-20 px-10
-          bg-black-10
-          z-50 ${
-            isOpen ? "translate-x-0" : "translate-x-[100vw]"
-          } transition-transform duration-200
-          `}
-        >
-          <div className="mx-auto">
-            <SearchBar />
-          </div>
-          <button
-            className="absolute top-7 right-7"
-            onClick={() => setIsOpen(false)}
-          >
-            <img src={XWhite} alt="" width={24} height={24} />
-          </button>
-        </div>,
-        document.getElementById("modal")
-      )}
+
+      <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 }

@@ -1,101 +1,72 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import search from "./search.svg";
-import xWhite from "@shared/assets/x-white.svg";
 
 function SearchBar({ type }) {
-  const [isValue, setIsValue] = useState("");
-  const [isOpenSearch, setIsOpenSearch] = useState(false);
-  const formRef = useRef(null);
+  const [value, setValue] = useState("");
+  const [isOpenSearchBar, setIsOpenSearchBar] = useState(false)
 
-  useEffect(() => {
-    function handleClick(event) {
-      if (formRef.current && !formRef.current.contains(event.target)) {
-        console.log('клик вне компонента')
-        setIsOpenSearch(false)
-      }
-    }
-
-    document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, []);
-
-  if (type === "laptop") {
+  if (type === "mobileMenu") {
     return (
-      <>
-        {isOpenSearch ? (
-          <form
-            ref={formRef}
-            className="hidden laptop:grid laptop:justify-self-end laptop:grid-cols-[1fr_auto] laptop:gap-x-2 laptpot:items-center laptop:bg-black-15 laptop:p-2.5 laptop:rounded-lg"
-          >
-            <input
-              className="placeholder:text-grey-60 outline-0 text-absolute-white"
-              placeholder="Search..."
-              value={isValue}
-              onChange={(e) => setIsValue(() => e.target.value)}
-            />
-            <div className="flex gap-x-3 items-center">
-              {isValue && (
-                <img
-                  src={xWhite}
-                  alt=""
-                  width={12}
-                  height={12}
-                  onClick={() => setIsValue("")}
-                />
-              )}
-              <div className={`${isValue && "rounded-sm bg-black-25"} p-1.5 `}>
-                <img
-                  className="laptop:w-6 desktop:w-8.5"
-                  src={search}
-                  alt=""
-                  width={24}
-                  height={24}
-                />
-              </div>
-            </div>
-          </form>
-        ) : (
-          <img
-            onClick={() => setIsOpenSearch(true)}
-            className="hidden laptop:inline-flex laptop:justify-self-end laptop:w-6 desktop:w-8.5"
-            src={search}
-            alt=""
-            width={24}
-            height={24}
-          />
-        )}
-      </>
+      <div
+        className="
+          grid self-start justify-self-center grid-cols-[1fr_auto] items-center
+          py-1 pr-2 lg:py-3 lg:pr-5
+          bg-black-08 
+          border border-black-15 rounded-md lg:rounded-2xl
+        "
+      >
+        <input
+          className="
+                p-4 lg:p-5
+              text-absolute-white font-normal placeholder:text-grey-60 placeholder:font-normal lg:text-2xl
+              bg-black-08
+                outline-0 focus:outline-2 focus:outline-grey-60
+              "
+          type="text"
+          placeholder="Search..."
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button
+          className={`${
+            value && "inline-flex bg-black-20 w-10 h-10 rounded-md"
+          } p-2`}
+        >
+          <img className="w-6 h-6" src={search} alt="" width={24} height={24} />
+        </button>
+      </div>
     );
   }
-
   return (
-    <form
-      className="grid grid-cols-[1fr_auto] gap-x-2 items-center bg-black-20 p-2.5 rounded-lg"
-      onSubmit={(e) => e.preventDefault()}
+    <div
+      className="
+        hidden laptop:grid grid-cols-[1fr_auto] justify-self-end items-center
+        pr-2
+        bg-black-08
+        border border-black-15 rounded-md
+      "
     >
       <input
-        className="placeholder:text-grey-60 outline-0 text-absolute-white"
+        className="
+            p-4
+          text-absolute-white font-normal placeholder:text-grey-60 placeholder:font-normal
+          bg-black-08
+          outline-0 focus:outline-2 focus:outline-grey-60
+          
+         "
+        type="text"
         placeholder="Search..."
-        value={isValue}
-        onChange={(e) => setIsValue(() => e.target.value)}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
-      <div className="flex gap-x-3 items-center">
-        {isValue && (
-          <img
-            src={xWhite}
-            alt=""
-            width={12}
-            height={12}
-            onClick={() => setIsValue("")}
-          />
-        )}
-        <div className={`${isValue && "rounded-sm bg-black-25"} p-1.5`}>
-          <img src={search} alt="" width={24} height={24} />
-        </div>
-      </div>
-    </form>
+      <button
+        className={`${
+          value && "inline-flex bg-black-20 w-10 h-10 rounded-md"
+        } p-2`}
+      >
+        <img className="w-6 h-6" src={search} alt="" width={24} height={24} />
+      </button>
+    </div>
   );
 }
 
