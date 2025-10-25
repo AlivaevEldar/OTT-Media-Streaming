@@ -30,7 +30,7 @@ function Promo() {
               to sign up for a free trial of StreamVibe.
             </p>
           </div>
-          <Button styles="mt-12.5 w-37 h-12 rounded-lg font-semibold text-sm text-absolute-white laptop:mt-0 desktop:w-47 desktop:h-16 desktop:text-lg">
+          <Button className="mt-12.5 w-37 h-12 rounded-lg font-semibold text-sm text-absolute-white laptop:mt-0 desktop:w-47 desktop:h-16 desktop:text-lg">
             Start a Free Trail
           </Button>
         </div>

@@ -3,9 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 function Nav({ type }) {
-  const [isActiveNavItem, setIsActiveNavItem] = useState(
-    useLocation().pathname
-  );
+  const isActiveNavItem = useLocation().pathname
 
   if (type === "mobileMenu") {
     return (
@@ -18,7 +16,7 @@ function Nav({ type }) {
       >
         <ul className="flex flex-col items-center">
           {navArray.map((item) => (
-            <li onClick={() => setIsActiveNavItem(item.path)} key={item.label}>
+            <li key={item.label}>
               <Link
                 className={`
                 block
@@ -52,7 +50,7 @@ function Nav({ type }) {
     >
       <ul className="laptop:flex">
         {navArray.map((item) => (
-          <li onClick={() => setIsActiveNavItem(item.path)} key={item.label}>
+          <li key={item.label}>
             <Link
               className={`
                 laptop:block

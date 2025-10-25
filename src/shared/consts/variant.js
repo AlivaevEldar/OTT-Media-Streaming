@@ -6,9 +6,10 @@ export const iconWrapperVariant = {
     "p-3 border border-black-15 bg-black-12 rounded-md laptop:p-4 laptop:rounded-lg desktop:p-5 desktop:rounded-[0.625rem]",
   footer:
     "p-3 rounded-md border border-black-15 bg-black-10 desktop:p-4 desktop:rounded-lg",
-  hero: "p-3 bg-black-06 border-black-15 border rounded-lg laptop:p-3.5",
-  swiperNavigation:
+  movieHero: "p-3 bg-black-06 border-black-15 border rounded-lg laptop:p-3.5",
+  swiperNavigationMovieSnows:
     "p-2.5 border rounded-md border-black-12 bg-black-10 desktop:p-3.5 desktop:rounded-lg",
+  swiperNavigationCastReviews: "p-3 rounded-full bg-black-08 border border-black-15 desktop:p-3.5"
 };
 
 export const posterVariant = {

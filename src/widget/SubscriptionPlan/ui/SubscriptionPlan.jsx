@@ -1,29 +1,9 @@
 import { useState } from "react";
 import Button from "@shared/ui/kit/Button";
+import { plans } from "../consts/Array";
 
 function SubscriptionPlan({ styles = "" }) {
   const [variantPlan, setVariantPlan] = useState("Monthly");
-
-  const plans = [
-    {
-      title: "Basic Plan",
-      description:
-        "Enjoy an extensive library of movies and shows, featuring a range of content, including recently released titles.",
-      price: 9.99,
-    },
-    {
-      title: "Standard Plan",
-      description:
-        "Access to a wider selection of movies and shows, including most new releases and exclusive content.",
-      price: 12.99,
-    },
-    {
-      title: "Premium Plan",
-      description:
-        "Access to a widest selection of movies and shows, including all new releases and Offline Viewing.",
-      price: 14.99,
-    },
-  ];
 
   return (
     <section className={`custom-container ${styles}`}>
@@ -87,7 +67,7 @@ function SubscriptionPlan({ styles = "" }) {
                     >
                       Start Free Trial
                     </button>
-                    <Button styles="h-12 rounded-md text-sm desktop:text-lg desktop:rounded-lg desktop:h-16">
+                    <Button className="h-12 rounded-md text-sm desktop:text-lg desktop:rounded-lg desktop:h-16">
                       Choose Plan
                     </Button>
                   </div>

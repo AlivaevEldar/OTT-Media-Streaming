@@ -16,7 +16,7 @@ function FAQ({ styles = "" }) {
               find answers to the most common questions about StreamVibe.
             </p>
           </div>
-          <Button styles="w-35 h-12.5 rounded-md text-sm desktop:w-44 desktop:h-16 desktop:rounded-lg desktop:text-lg">
+          <Button className="w-35 h-12.5 rounded-md text-sm desktop:w-44 desktop:h-16 desktop:rounded-lg desktop:text-lg">
             Ask a Question
           </Button>
         </div>

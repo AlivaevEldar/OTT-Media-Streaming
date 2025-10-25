@@ -1,6 +1,6 @@
 export const navArray = [
   { label: "Home", path: "/" },
-  { label: "Movies & Shows", path: "/Movies&Shows" },
-  { label: "Support", path: "/Support" },
-  { label: "Subscriptions", path: "/Subscriptions" },
+  { label: "Movies & Shows", path: "/moviesShows" },
+  { label: "Support", path: "/support" },
+  { label: "Subscriptions", path: "/subscriptions" },
 ];

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { posterVariant } from "@shared/consts/variant";
 import SVGIcon from "./svgIcon";
 import Button from "@shared/ui/kit/Button";
-import play from "./play.svg";
+import play from "@shared/assets/arrow-right.svg";
 
 function HeroHome() {
   const [populatMovieList, setPopularMovieList] = useState([]);
@@ -41,7 +41,7 @@ function HeroHome() {
           </div>
           <Button
             icon={play}
-            styles="mt-7.5 mx-auto w-63 h-16 rounded-lg laptop:mt-10 desktop:mt-12.5 desktop:w-62.5 desktop:h-16 desktop:text-lg"
+            className="mt-7.5 mx-auto w-63 h-16 rounded-lg laptop:mt-10 desktop:mt-12.5 desktop:w-62.5 desktop:h-16 desktop:text-lg"
           >
             Start Watching Now
           </Button>
